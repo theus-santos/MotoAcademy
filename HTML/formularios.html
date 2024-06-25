@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Formularios</title>
+</head>
+<body>
+    <form class="formulario">
+        <div>
+            <label for="nome">Name:</label>
+            <input type="text" name="nome">
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <label for="sexo">Sex:</label>
+            <div>
+                <input type="radio" name="sexo" value="masculino">
+                <label for="masculino">Male</label>
+            </div>
+            <div>
+                <input type="radio" name="sexo" value="feminino">
+                <label for="feminino">Female</label>
+            </div>          
+        </div>
+        <div>
+            <label for="país">Country:</label>
+            <select name="país">
+                <option value="none">Select an option</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Russia">Russia</option>
+                <option value="EUA">EUA</option>
+            </select>
+        </div>
+        <div>
+            <label for="mensagem">Message:</label>
+            <br>
+            <textarea name="mensagem" rows="3"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" name="inscrever">
+            <label for="inscrever">Subscribe?</label>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+</html>
