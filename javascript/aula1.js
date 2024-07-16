@@ -156,5 +156,50 @@ const pessoas = [
 // let PessoasFiltradas = pessoas.filter((pessoa)=> pessoa.idade > 22);
 // console.log(PessoasFiltradas)
 
-let PessoasFiltradas = pessoas.filter((pessoa)=> pessoa.nome != "Matheus");
-console.log(PessoasFiltradas);
+// let PessoasFiltradas = pessoas.filter((pessoa)=> pessoa.nome != "Matheus");
+// console.log(PessoasFiltradas);
+
+// function acharPessoa() {
+//     let pessoa = pessoas.forEach((pessoa) => pessoa.nome === "Matheus")
+//     if (pessoa) {
+//         console.log(pessoa);
+//     } else {
+//         console.log("Não encontrado!");
+//     }
+// }
+// acharPessoa();
+
+// const array1 = [1, 2, 3, 4];
+// const array2 = ["A", "B", "C", "D"];
+
+// const found = array1.find((e) => e > 3);
+// console.log(found);
+
+// function nomeFuncao() {
+//     return "Hello World";
+// }
+// const helloWorld = nomeFuncao();
+// console.log(helloWorld);
+
+// const byeWorld = () => "Bye World";
+// console.log(byeWorld())
+
+
+// const soma = (a, b) => {
+//     return a + b;
+// }
+
+// const soma2 = (a, b) => a + b;
+
+// console.log(soma(1, 1));
+// console.log(soma2(2, 2));
+
+// const imprimirNomeCompleto = (nome, sobrenome) => {
+//     let nomeCompleto = console.log((nome + " " + sobrenome));
+//     return nomeCompleto;
+// }
+// imprimirNomeCompleto('matheus', 'almeida');
+
+export function saudacao() {
+    console.log("Hello, Welcome!"); 
+}
