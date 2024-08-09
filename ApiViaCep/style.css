@@ -1,0 +1,14 @@
+#resultado {
+    background-color: #42f342d5;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #00000097;
+}
+
+#form button {
+    width: 100%;
+}
+
+.container {
+    width: 50%;
+}

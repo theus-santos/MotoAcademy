@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo</title>
+</head>
+<body>
+    <!-- <button id="mudarCorBotao">Botao</button> -->
+
+    <p id="paragrafo">Mudar cor desse paragráfo</p>
+    <button id="mudarEstiloBotao">Mudar</button>
+
+    <script>
+        // document.getElementById('mudarCorBotao').addEventListener('click', ()=> {
+        //     document.body.style.background = 'blue';
+        // })
+        document.getElementById('mudarEstiloBotao').addEventListener('click', ()=> {
+            let texto = document.getElementById('paragrafo');
+
+            texto.style.color = 'red';
+            texto.style.fontSize = '50px';
+            texto.style.fontWeight = 'bold'
+            document.body.style.background = 'black';
+        })
+    </script>
+</body>
+</html>
