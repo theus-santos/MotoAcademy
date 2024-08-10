@@ -38,9 +38,13 @@ app.put('/usuarios/:id', (req, res)=> {
 app.delete('/usuarios/:id', (req, res)=> {
     const id = parseInt(req.params.id);
     const userIndex = users.findIndex(user => user.id === id);
-
+    // users = users.filter(user => user.id !== id);
+    if (userIndex < 0) {
+        res.status(400).json({message: 'Usuário não encontrado!'})
+        return;
+    } 
     users.splice(userIndex, 1);
-    res.status(200).json({message: "Usuário deletado!", users});  
+    res.status(204).json({message: "Usuário deletado!", users});  
 })
 
 app.listen(port, ()=> {
