@@ -4,7 +4,7 @@ const port = 8000;
 
 app.use(express.json())
 
-const users = [
+let users = [
     {id: 1, name: "Matheus"},
     {id: 2, name: "Gabriel"},
 ]
@@ -22,11 +22,25 @@ app.post('/usuarios', (req, res)=> {
     res.status(201).json(users);
 })
 
+app.put('/usuarios/:id', (req, res)=> {
+    const id = parseInt(req.params.id);
+    const { name } = req.body;
+    const userIndex = users.findIndex(user => user.id === id);
+
+    if (userIndex != -1) {
+        users[userIndex].name = name;
+        res.json(users[userIndex])
+    } else {
+        res.status(400).json({message: 'Usuário não encontrado!'})
+    }
+})
+
 app.delete('/usuarios/:id', (req, res)=> {
-    const id = req.params;
+    const id = parseInt(req.params.id);
+    const userIndex = users.findIndex(user => user.id === id);
 
-
-    res.status(200).json(users);  
+    users.splice(userIndex, 1);
+    res.status(200).json({message: "Usuário deletado!", users});  
 })
 
 app.listen(port, ()=> {
