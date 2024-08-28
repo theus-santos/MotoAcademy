@@ -5,8 +5,8 @@ const port = 8000;
 app.use(express.json())
 
 let users = [
-    {id: 1, name: "Matheus"},
-    {id: 2, name: "Gabriel"},
+    {id: 1, name: "Matheus", idade: 19},
+    {id: 2, name: "Gabriel", idade: 20},
 ]
 
 app.get('/', (req, res)=> {
@@ -15,8 +15,9 @@ app.get('/', (req, res)=> {
 
 app.post('/usuarios', (req, res)=> {
     const name = req.body.name;
+    const idade = req.body.idade;
     const id = users.length + 1;
-    const newUser = {id, name};
+    const newUser = {id, name, idade};
 
     users.push(newUser);
     res.status(201).json(users);
@@ -24,11 +25,14 @@ app.post('/usuarios', (req, res)=> {
 
 app.put('/usuarios/:id', (req, res)=> {
     const id = parseInt(req.params.id);
-    const { name } = req.body;
+    const { name, idade } = req.body;
     const userIndex = users.findIndex(user => user.id === id);
 
     if (userIndex != -1) {
         users[userIndex].name = name;
+        if(idade) {
+            users[userIndex].idade = idade
+        }
         res.json(users[userIndex])
     } else {
         res.status(400).json({message: 'Usuário não encontrado!'})
@@ -37,13 +41,10 @@ app.put('/usuarios/:id', (req, res)=> {
 
 app.delete('/usuarios/:id', (req, res)=> {
     const id = parseInt(req.params.id);
-    const userIndex = users.findIndex(user => user.id === id);
-    // users = users.filter(user => user.id !== id);
-    if (userIndex < 0) {
-        res.status(400).json({message: 'Usuário não encontrado!'})
-        return;
-    } 
-    users.splice(userIndex, 1);
+    // const userIndex = users.findIndex(user => user.id === id);
+    // users.splice(userIndex, 1);
+
+    users = users.filter(user => user.id !== id);
     res.status(204).json({message: "Usuário deletado!", users});  
 })
 
