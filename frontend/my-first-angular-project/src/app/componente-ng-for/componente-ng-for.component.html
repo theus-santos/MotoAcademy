@@ -1,0 +1,8 @@
+<div *ngFor="let item of items; let i = index"
+     [ngClass]="{highlight: i % 2 == 0}">
+
+  <div class="caixa-valor">
+    <h3 [ngClass]="{titulo: item.name == 'Item 1'}">{{item.name}}</h3>
+    <p>{{item.description}}</p>
+  </div>
+</div>

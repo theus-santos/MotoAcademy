@@ -1,0 +1,11 @@
+.par {
+  background-color: red;
+  padding: 5px;
+  margin: 5px;
+}
+
+.impar {
+  background-color: blue;
+  padding: 5px;
+  margin: 5px;
+}

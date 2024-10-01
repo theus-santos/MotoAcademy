@@ -1,0 +1,9 @@
+<div *ngFor="let aluno of alunos; let alunoIndex = index"
+     [ngClass]="alunoIndex % 2 == 0 ? 'par' : 'impar'">
+  <div>
+      <h3>Nome: {{aluno.nome}}</h3>
+      <p>Idade: {{aluno.idade}}</p>
+      <p>Sexo: {{aluno.sexo}}</p>
+      <p>Série: {{aluno.serie}}</p>
+  </div>
+</div>
